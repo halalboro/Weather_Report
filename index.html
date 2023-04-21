@@ -201,7 +201,7 @@
                 document.getElementById("time").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/time", true);
+        xhttp.open("POST", "/time", true);
         xhttp.send();
     }, 1000);
 
@@ -212,7 +212,7 @@
                 document.getElementById("temperature").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/temperature", true);
+        xhttp.open("POST", "/temperature", true);
         xhttp.send();
     }, 10000);
 
@@ -223,7 +223,7 @@
                 document.getElementById("humidity").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/humidity", true);
+        xhttp.open("POST", "/humidity", true);
         xhttp.send();
     }, 10000);
     
@@ -234,7 +234,7 @@
                 document.getElementById("aqi").innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/aqi", true);
+        xhttp.open("POST", "/aqi", true);
         xhttp.send();
     }, 10000);
 </script>
