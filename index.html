@@ -171,7 +171,7 @@
     <p class="justify" style="font-family: Bungee">
         <img src="https://cdn.discordapp.com/attachments/520899392778010634/1088890137942970368/Screenshot_2023-03-24_111900-removebg-preview.png" alt="" style="width:75px;height:80px;">
         <span class="dht">Temperature</span>
-        <span id="data">%TEMPERATURE%</span>
+        <span id="data"></span>
         <sup class="units">&deg;C</sup>
     </p>
     <p class="justify" style="font-family: Bungee">
@@ -206,7 +206,7 @@ setInterval(function () {
 }, 10000);
 
 setInterval(function () {
-    var serial = new WebSocket("ws://http://172.17.76.228"); // change "localhost" to the IP address of your Arduino board
+    var serial = new WebSocket("wss://http://172.17.76.228:81/"); // change "localhost" to the IP address of your Arduino board
     serial.onmessage = function(event) {
       document.getElementById("data").innerHTML = event.data;
     };
