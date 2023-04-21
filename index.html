@@ -193,50 +193,6 @@
     <span style="font-size: xx-large;">Pilani, RJ</span>
     </p>
 </section>
-<script>
-    setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("time").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("POST", "/time", true);
-        xhttp.send();
-    }, 1000);
-
-    setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("temperature").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("POST", "/temperature", true);
-        xhttp.send();
-    }, 10000);
-
-    setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("humidity").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("POST", "/humidity", true);
-        xhttp.send();
-    }, 10000);
-    
-    setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("aqi").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("POST", "/aqi", true);
-        xhttp.send();
-    }, 10000);
-</script>
+<script src="index.js"></script>
 </body>
 </html>
