@@ -1,4 +1,4 @@
-# Weather_Report
+# Weather_Report (Incomplete)
 - **Problem Statement:** Developing a Weather Station for Pilani (where my University is located) and getting real-time data instead of prediction data from weather models. Cost and power optimization strategies were adopted for this project.<br/>
 * **Time spent in development:** 5 months (Jan 2023 to May 2023)<br/>
 + **Components used:** NodeMCU, DHT11 Sensor, ZH03B AQI Sensor, 12V-12W Solar Panel, Waveshare Solar Power Management Module.<br/>
