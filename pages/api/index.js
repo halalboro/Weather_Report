@@ -63,27 +63,27 @@ const HomePage = () => {
                       fetch(url)
                         .then(response => response.text())
                         .then(data => {
-                          document.getElementById(elementId).innerHTML = data;
+                          document.getElementById(elementId).innerHTML = data
                         })
                         .catch(error => {
-                          console.error('Error fetching data:', error);
+                          console.error('Error fetching data:', error)
                         })
                     }
                 
                     setInterval(function () {
-                      fetchData("api/handler", "time");
+                      fetchData("api/handler", "time")
                     }, 1000)
                 
                     setInterval(function () {
-                      fetchData("api/handler", "temperature");
+                      fetchData("api/handler", "temperature")
                     }, 10000)
                 
                     setInterval(function () {
-                      fetchData("api/handler", "humidity");
+                      fetchData("api/handler", "humidity")
                     }, 10000)
                 
                     setInterval(function () {
-                      fetchData("api/handler", "aqi");
+                      fetchData("api/handler", "aqi")
                     }, 10000)
                 </script>
                 </html>
