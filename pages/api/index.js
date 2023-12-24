@@ -5,23 +5,21 @@ const HomePage = () => {
     return (
                 <html>
                 <head>
-                    <meta content="width=device-width, initial-scale=1" name="viewport">
-                    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
-                    <link rel="apple-touch-icon" sizes="180x180" href="/resources/apple-touch-icon.png">
-                    <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon-32x32.png">
-                    <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon-16x16.png">
-                    <link rel="manifest" href="/resources/site.webmanifest">
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-                
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&display=swap" rel="stylesheet">
-                
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet">
+                    <meta content="width=device-width, initial-scale=1" name="viewport" />
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" crossorigin="anonymous" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="/resources/apple-touch-icon.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon-16x16.png" />
+                    <link rel="manifest" href="/resources/site.webmanifest" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&display=swap" rel="stylesheet" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
                     
                     <style>
                         *{
