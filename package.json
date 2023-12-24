@@ -1,0 +1,21 @@
+{
+  "name": "weather-report",
+  "version": "1.0.0",
+  "description": "low cost weather station",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "10.0.0"
+  },
+  "devDependencies": {
+  },
+  "keywords": [],
+  "author": "Anubhav Panda",
+  "license": "ISC"
+}
