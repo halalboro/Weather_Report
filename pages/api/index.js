@@ -1,3 +1,8 @@
+// pages/index.js
+import React from 'react';
+
+const HomePage = () => {
+return (
 </html><!DOCTYPE HTML>
 <html>
 <head>
@@ -216,5 +221,8 @@ function fetchData(url, elementId) {
       fetchData("api/handler", "aqi");
     }, 10000);
 </script>
-
 </html>
+);
+};
+
+export default HomePage;
