@@ -3,7 +3,7 @@ import React from 'react';
 
 const HomePage = () => {
     return (
-                            <html>
+                <html>
                 <head>
                     <meta content="width=device-width, initial-scale=1" name="viewport"/>
                     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet"/>
