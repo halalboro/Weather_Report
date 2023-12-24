@@ -67,24 +67,24 @@ const HomePage = () => {
                         })
                         .catch(error => {
                           console.error('Error fetching data:', error);
-                        });
+                        })
                     }
                 
                     setInterval(function () {
                       fetchData("api/handler", "time");
-                    }, 1000);
+                    }, 1000)
                 
                     setInterval(function () {
                       fetchData("api/handler", "temperature");
-                    }, 10000);
+                    }, 10000)
                 
                     setInterval(function () {
                       fetchData("api/handler", "humidity");
-                    }, 10000);
+                    }, 10000)
                 
                     setInterval(function () {
                       fetchData("api/handler", "aqi");
-                    }, 10000);
+                    }, 10000)
                 </script>
                 </html>
         );
