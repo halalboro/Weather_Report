@@ -192,25 +192,33 @@ const App = () => (
     </body>
 
 function App() {
-  const fetchData = (url, elementId) => {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById(elementId).innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }
+  const fetchData = async (url, elementId) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.text();
+      document.getElementById(elementId).innerHTML = data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
     const intervals = [
-      setInterval(() => fetchData("api/handler", "time"), 1000),
-      setInterval(() => fetchData("api/handler", "temperature"), 10000),
-      setInterval(() => fetchData("api/handler", "humidity"), 10000),
-      setInterval(() => fetchData("api/handler", "aqi"), 10000)
+      setInterval(() => {
+        fetchData("api/handler", "time");
+      }, 1000),
+      setInterval(() => {
+        fetchData("api/handler", "temperature");
+      }, 10000),
+      setInterval(() => {
+        fetchData("api/handler", "humidity");
+      }, 10000),
+      setInterval(() => {
+        fetchData("api/handler", "aqi");
+      }, 10000)
     ];
 
+    // Clear intervals on component unmount
     return () => intervals.forEach(clearInterval);
   }, []);
 
