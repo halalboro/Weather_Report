@@ -190,49 +190,37 @@
 </body>
 
 <script>
-    setInterval(function () {
+    // Function to encapsulate the AJAX request logic
+    function fetchData(endpoint, elementId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("time").innerHTML = this.responseText;
+                document.getElementById(elementId).innerHTML = this.responseText;
             }
         };
-        xhttp.open("GET", "/time", true);
+        xhttp.open("GET", endpoint, true);
         xhttp.send();
+    }
+
+    // Periodically update the "time" element every second
+    setInterval(function () {
+        fetchData("/time", "time");
     }, 1000);
 
+    // Periodically update the "temperature" element every 10 seconds
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("temperature").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/temperature", true);
-        xhttp.send();
+        fetchData("/temperature", "temperature");
     }, 10000);
 
+    // Periodically update the "humidity" element every 10 seconds
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("humidity").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/humidity", true);
-        xhttp.send();
+        fetchData("/humidity", "humidity");
     }, 10000);
 
+    // Periodically update the "aqi" element every 10 seconds
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("aqi").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/aqi", true);
-        xhttp.send();
+        fetchData("/aqi", "aqi");
     }, 10000);
-
+    
 </script>
 </html>
