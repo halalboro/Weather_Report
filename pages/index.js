@@ -1,5 +1,6 @@
 // pages/index.js
 import React from 'react';
+import React, { useEffect } from 'react';
 
 const App = () => (
   <>
@@ -189,8 +190,9 @@ const App = () => (
         </p>
     </section>
     </body>
-<script>
-{   function fetchData(url, elementId) {
+
+function App() {
+  const fetchData = (url, elementId) => {
     fetch(url)
       .then(response => response.text())
       .then(data => {
@@ -200,23 +202,27 @@ const App = () => (
         console.error('Error fetching data:', error);
       });
   }
-    setInterval(function () {
-      fetchData("api/handler", "time");
-    }, 1000);
 
-    setInterval(function () {
-      fetchData("api/handler", "temperature");
-    }, 10000);
+  useEffect(() => {
+    const intervals = [
+      setInterval(() => fetchData("api/handler", "time"), 1000),
+      setInterval(() => fetchData("api/handler", "temperature"), 10000),
+      setInterval(() => fetchData("api/handler", "humidity"), 10000),
+      setInterval(() => fetchData("api/handler", "aqi"), 10000)
+    ];
 
-    setInterval(function () {
-      fetchData("api/handler", "humidity");
-    }, 10000);
+    return () => intervals.forEach(clearInterval);
+  }, []);
 
-    setInterval(function () {
-      fetchData("api/handler", "aqi");
-    }, 10000);
+  return (
+    <div>
+      <div id="time"></div>
+      <div id="temperature"></div>
+      <div id="humidity"></div>
+      <div id="aqi"></div>
+    </div>
+  );
 }
-</script>
 </>
 
 export default App;
