@@ -188,50 +188,33 @@
     </p>
 </section>
 </body>
-
 <script>
+function fetchData(url, elementId) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    }
+
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("time").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/time", true);
-        xhttp.send();
+      fetchData("api/handler", "time");
     }, 1000);
 
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("temperature").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/temperature", true);
-        xhttp.send();
+      fetchData("api/handler", "temperature");
     }, 10000);
 
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("humidity").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/humidity", true);
-        xhttp.send();
+      fetchData("api/handler", "humidity");
     }, 10000);
 
     setInterval(function () {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("aqi").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "/aqi", true);
-        xhttp.send();
+      fetchData("api/handler", "aqi");
     }, 10000);
+  </script>
 
 </html>
