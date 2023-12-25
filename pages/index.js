@@ -191,8 +191,8 @@ const App = () => (
     </section>
     </body>
   </>
-  );
-}
+);
+
 </>
 
 export default App;
