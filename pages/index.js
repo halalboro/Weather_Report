@@ -21,12 +21,20 @@
     }, interval);
   };
   
-  useEffect(() => {
-    fetchData('/api/time', setTime, 1000);
-    fetchData('/api/temperature', setTemperature, 10000);
-    fetchData('/api/humidity', setHumidity, 10000);
-    fetchData('/api/aqi', setAqi, 10000);
-  }, []);
+ useEffect(() => {
+  const timeInterval = fetchData('/api/time', setTime, 1000);
+  const tempInterval = fetchData('/api/temperature', setTemperature, 10000);
+  const humidityInterval = fetchData('/api/humidity', setHumidity, 10000);
+  const aqiInterval = fetchData('/api/aqi', setAqi, 10000);
+
+  // Clear intervals when component is unmounted
+  return () => {
+    clearInterval(timeInterval);
+    clearInterval(tempInterval);
+    clearInterval(humidityInterval);
+    clearInterval(aqiInterval);
+  };
+}, []);
 
   return (
   <>
