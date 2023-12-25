@@ -1,8 +1,14 @@
   // pages/index.js
   import React, { useState, useEffect } from 'react';
 
+  const App = () => {
   
-  const fetchData = (url, setStateFunction, interval) => {
+  const [time, setTime] = useState('');
+  const [temperature, setTemperature] = useState('');
+  const [humidity, setHumidity] = useState('');
+  const [aqi, setAqi] = useState('');
+  
+    const fetchData = (url, setStateFunction, interval) => {
     setInterval(() => {
       fetch(url)
         .then(response => response.json())
