@@ -199,21 +199,21 @@
     <section className="data justify">
         <p className="justify" style={{fontFamily: 'Bungee'}}>
             <span className="dht">Time</span>
-            <span id="time">%TIME%</span>
+            <span id="time">{time}</span>
             <sup className="units">Hours</sup>  
         </p>
         <p className="justify" style={{fontFamily: 'Bungee'}}>
             <span className="dht">Temperature</span>
-            <span id="temperature">%TEMPERATURE%</span>
+            <span id="temperature">{temperature}</span>
             <sup className="units">°C</sup>
         </p>
         <p className="justify" style={{fontFamily: 'Bungee'}}>
             <span className="dht">Humidity</span>
-            <span id="humidity">%HUMIDITY%</span>
+            <span id="humidity">{humidity}</span>
             <sup className="units">percent</sup>
         </p>
         <p className="justify" style={{fontFamily: 'Bungee'}}>
-            <span className="dht">AQI</span>
+            <span className="dht">{aqi}</span>
             <span id="aqi">%AQI%</span>
         </p>
     </section>
