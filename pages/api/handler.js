@@ -17,20 +17,20 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'GET') {
     try {
-      // Assuming you have corresponding data for each type
+      
       let responseData;
       switch (req.url) {
         case '/api/time':
-          responseData = time; // Implement this function
+          responseData = time; 
           break;
         case '/api/temperature':
-          responseData = temperature; // Implement this function
+          responseData = temperature; 
           break;
         case '/api/humidity':
-          responseData = humidity; // Implement this function
+          responseData = humidity; 
           break;
         case '/api/aqi':
-          responseData = aqi; // Implement this function
+          responseData = aqi; 
           break;
         default:
           return res.status(404).json({ success: false, error: 'Not Found' });
