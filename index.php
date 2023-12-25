@@ -1,5 +1,5 @@
-</html><!DOCTYPE HTML>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" rel="stylesheet">
@@ -38,7 +38,6 @@
             right: 16px;
             font-size: 18px;
         }
-
 
         .justify{
             display: flex;
@@ -149,17 +148,15 @@
             font-size: 1.5rem;
             padding-inline: 1rem;
         }
-
     </style>
 </head>
-
 
 <body>
 <section class="container justify">
     <img src="https://cdn.discordapp.com/attachments/557166230595698689/1088611560169148586/weather_only.png" alt="" class="top" >
     <img src="https://cdn.discordapp.com/attachments/557166230595698689/1088611560450162758/report_only.png" alt="" class="bottom" >
-
 </section>
+
 <section class="data justify">
     <p class="justify" style="font-family: Bungee">
         <span class="dht">Time</span>
@@ -181,13 +178,13 @@
         <span id="aqi">%AQI%</span>
     </p>
 </section>
+
 <section class="topright">
     <p style="font-family:Kanit">
     <i class="fa-solid fa-location-dot" style="color: #e10e39;"></i>
     <span style="font-size: x-large;">Pilani, RJ</span>
     </p>
 </section>
-</body>
 
 <script>
     setInterval(function () {
@@ -234,4 +231,6 @@
         xhttp.send();
     }, 10000);
 </script>
+
+</body>
 </html>
