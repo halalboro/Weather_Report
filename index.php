@@ -231,7 +231,7 @@
         xhttp.send();
     }, 10000);
 </script>
-
+<?PHP echo "Hello World";?>
 </body>
 </html>
-<?PHP echo "Hello World";?>
+
