@@ -2,7 +2,33 @@
 import React from 'react';
 
 
-const App = () => (
+const App = () => {
+  const [time, setTime] = useState('');
+  const [temperature, setTemperature] = useState('');
+  const [humidity, setHumidity] = useState('');
+  const [aqi, setAqi] = useState('');
+
+  const fetchData = (url, setStateFunction, interval) => {
+    setInterval(() => {
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          setStateFunction(data);
+        })
+        .catch(error => {
+          console.error(`Error fetching ${url}:`, error);
+        });
+    }, interval);
+  };
+
+  useEffect(() => {
+    fetchData('/api/handler?dataType=time', setTime, 1000);
+    fetchData('/api/handler?dataType=temperature', setTemperature, 10000);
+    fetchData('/api/handler?dataType=humidity', setHumidity, 10000);
+    fetchData('/api/handler?dataType=aqi', setAqi, 10000);
+  }, []);
+
+  return (
   <>
     <head>
       <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -192,5 +218,6 @@ const App = () => (
     </body>
   </>
 );
+};  
 
 export default App;
