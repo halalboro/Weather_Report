@@ -1,7 +1,17 @@
+let latestData = {
+  time: '',
+  temperature: '',
+  humidity: '',
+  aqi: '',
+};
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const { time, temperature, humidity, aqi } = req.body;
+
+      // Update latest data
+      latestData = { time, temperature, humidity, aqi };
 
       // Logging received data
       console.log('Received data:');
@@ -17,20 +27,20 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'GET') {
     try {
-      
       let responseData;
+
       switch (req.url) {
         case '/api/time':
-          responseData = time; 
+          responseData = latestData.time;
           break;
         case '/api/temperature':
-          responseData = temperature; 
+          responseData = latestData.temperature;
           break;
         case '/api/humidity':
-          responseData = humidity; 
+          responseData = latestData.humidity;
           break;
         case '/api/aqi':
-          responseData = aqi; 
+          responseData = latestData.aqi;
           break;
         default:
           return res.status(404).json({ success: false, error: 'Not Found' });
