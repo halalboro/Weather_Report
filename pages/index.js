@@ -22,10 +22,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchData('/api/handler?dataType=time', setTime, 1000);
-    fetchData('/api/handler?dataType=temperature', setTemperature, 10000);
-    fetchData('/api/handler?dataType=humidity', setHumidity, 10000);
-    fetchData('/api/handler?dataType=aqi', setAqi, 10000);
+    fetchData('/api/handler', setTime, 1000);
+    fetchData('/api/handler', setTemperature, 10000);
+    fetchData('/api/handler', setHumidity, 10000);
+    fetchData('/api/handler', setAqi, 10000);
   }, []);
 
   return (
