@@ -213,8 +213,8 @@
             <sup className="units">percent</sup>
         </p>
         <p className="justify" style={{fontFamily: 'Bungee'}}>
-            <span className="dht">{aqi}</span>
-            <span id="aqi">%AQI%</span>
+            <span className="dht">AQI</span>
+            <span id="aqi">{aqi}</span>
         </p>
     </section>
     <section className="topright">
