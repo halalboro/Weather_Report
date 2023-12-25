@@ -1,4 +1,3 @@
-// api/handler.js
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
@@ -16,5 +15,33 @@ export default async function handler(req, res) {
       console.error('Error processing data:', error);
       return res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
+  } else if (req.method === 'GET') {
+    try {
+      // Assuming you have corresponding data for each type
+      let responseData;
+      switch (req.url) {
+        case '/api/time':
+          responseData = time; // Implement this function
+          break;
+        case '/api/temperature':
+          responseData = temperature; // Implement this function
+          break;
+        case '/api/humidity':
+          responseData = humidity; // Implement this function
+          break;
+        case '/api/aqi':
+          responseData = aqi; // Implement this function
+          break;
+        default:
+          return res.status(404).json({ success: false, error: 'Not Found' });
+      }
+
+      return res.status(200).json(responseData);
+    } catch (error) {
+      console.error('Error processing data:', error);
+      return res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
+  } else {
+    return res.status(405).json({ success: false, error: 'Method Not Allowed' });
   }
 }
