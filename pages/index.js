@@ -1,13 +1,7 @@
-// pages/index.js
-import React, { useState, useEffect } from 'react';
+  // pages/index.js
+  import React, { useState, useEffect } from 'react';
 
-
-const App = () => {
-  const [time, setTime] = useState('');
-  const [temperature, setTemperature] = useState('');
-  const [humidity, setHumidity] = useState('');
-  const [aqi, setAqi] = useState('');
-
+  
   const fetchData = (url, setStateFunction, interval) => {
     setInterval(() => {
       fetch(url)
@@ -20,12 +14,12 @@ const App = () => {
         });
     }, interval);
   };
-
+  
   useEffect(() => {
-    fetchData('/api/handler', setTime, 1000);
-    fetchData('/api/handler', setTemperature, 10000);
-    fetchData('/api/handler', setHumidity, 10000);
-    fetchData('/api/handler', setAqi, 10000);
+    fetchData('/api/time', setTime, 1000);
+    fetchData('/api/temperature', setTemperature, 10000);
+    fetchData('/api/humidity', setHumidity, 10000);
+    fetchData('/api/aqi', setAqi, 10000);
   }, []);
 
   return (
