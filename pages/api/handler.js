@@ -16,15 +16,4 @@ export default async function handler(req, res) {
       console.error('Error processing data:', error);
       return res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
-  } else if (req.method === 'GET') {
-    try {
-      // Respond with a JSON object containing the data
-      return res.status(200).json({ time, temperature, humidity, aqi });
-    } catch (error) {
-      console.error('Error processing data:', error);
-      return res.status(500).json({ success: false, error: 'Internal Server Error' });
-    }
-  } else {
-    return res.status(405).json({ success: false, error: 'Method Not Allowed' });
   }
-}
